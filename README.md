@@ -2,7 +2,7 @@
 ---
 
 ### MediMate Bot 
-A simple medical chatbot using React (frontend), Node.js/Express (backend), and the Gemini API.
+A simple medical chatbot using React (frontend), Node.js (backend), and the Gemini API.
 ---
 
 ### Run the Bot Locally
@@ -35,3 +35,4 @@ cd ../client
 npm run dev
 ```
 Open the printed local URL in your browser.
+
