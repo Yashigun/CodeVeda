@@ -17,19 +17,19 @@ const Header = () => {
                 </span>
               </h1>
               
-              <p className='text-teal-100 text-4xl md:text-xl font-medium animate-slide-in-left animation-delay-200'>
+              <p className='text-teal-100 md:text-3xl font-medium animate-slide-in-left animation-delay-200'>
                 From chat to checkup! 💬➡️🏥
               </p>
               
-              <p className='text-teal-200 text-sm md:text-base opacity-90 leading-relaxed animate-slide-in-left animation-delay-400'>
+              <p className='text-teal-200 text-sm md:text-xl opacity-90 leading-relaxed animate-slide-in-left animation-delay-400'>
                 Your friendly AI health companion, ready to help you navigate your wellness journey with care and expertise.
               </p>
             </div>
             
             <button className='group flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-semibold text-sm md:text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-teal-50 animate-slide-in-left animation-delay-600 relative overflow-hidden'>
-              <span className='relative z-10'>Talk to Miffy</span>
-              <div className='w-5 h-5 bg-primary rounded-full flex items-center justify-center group-hover:bg-teal-700 transition-all duration-300 group-hover: relative z-10'>
-                <svg className='w-3 h-3 text-white transform group-hover:translate-x-0.5 transition-transform duration-300' fill='currentColor' viewBox='0 0 20 20'>
+              <span className='relative text-xl z-10'>Talk to Miffy</span>
+              <div className='w-7 h-7 bg-primary rounded-full flex items-center justify-center group-hover:bg-teal-700 transition-all duration-300 group-hover: relative z-10'>
+                <svg className='w-4 h-4 text-white transform group-hover:translate-x-0.5 transition-transform duration-300' fill='currentColor' viewBox='0 0 20 20'>
                   <path fillRule='evenodd' d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z' clipRule='evenodd' />
                 </svg>
               </div>
