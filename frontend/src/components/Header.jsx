@@ -10,14 +10,14 @@ const Header = () => {
           {/*---------------------------- Left Text Section ------------------------------*/}
           <div className='flex-1 flex flex-col items-start justify-center gap-6 p-8 md:p-12 rounded-3xl transform hover:scale-[1.02] hover:shadow-3xl transition-all duration-500 ease-out animate-fade-in-up'>
             <div className='space-y-4'>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl text-white font-bold leading-tight animate-slide-in-left'>
+              <h1 className='text-6xl md:text-4xl lg:text-5xl text-white font-bold leading-tight animate-slide-in-left'>
                 Welcome to 
-                <span className='block font-extrabold bg-gradient-to-r from-teal-100 to-white bg-clip-text text-transparent animate-pulse-subtle'>
+                <span className='text-7xl block font-extrabold bg-gradient-to-r from-teal-100 to-white bg-clip-text text-transparent animate-pulse-subtle'>
                   MediMate
                 </span>
               </h1>
               
-              <p className='text-teal-100 text-lg md:text-xl font-medium animate-slide-in-left animation-delay-200'>
+              <p className='text-teal-100 text-4xl md:text-xl font-medium animate-slide-in-left animation-delay-200'>
                 From chat to checkup! 💬➡️🏥
               </p>
               
@@ -26,14 +26,14 @@ const Header = () => {
               </p>
             </div>
             
-            <button className='group flex items-center gap-3 bg-white text-teal-700 px-8 py-4 rounded-full font-semibold text-sm md:text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-teal-50 animate-slide-in-left animation-delay-600 relative overflow-hidden'>
-              <span className='relative z-10'>Book Appointment</span>
-              <div className='w-5 h-5 bg-teal-600 rounded-full flex items-center justify-center group-hover:bg-teal-700 transition-all duration-300 group-hover:rotate-90 relative z-10'>
+            <button className='group flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-semibold text-sm md:text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-teal-50 animate-slide-in-left animation-delay-600 relative overflow-hidden'>
+              <span className='relative z-10'>Talk to Miffy</span>
+              <div className='w-5 h-5 bg-primary rounded-full flex items-center justify-center group-hover:bg-teal-700 transition-all duration-300 group-hover: relative z-10'>
                 <svg className='w-3 h-3 text-white transform group-hover:translate-x-0.5 transition-transform duration-300' fill='currentColor' viewBox='0 0 20 20'>
                   <path fillRule='evenodd' d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z' clipRule='evenodd' />
                 </svg>
               </div>
-              {/* Button hover effect */}
+              
               <div className='absolute inset-0 bg-gradient-to-r from-teal-600 to-teal-700 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-full'></div>
             </button>
           </div>
@@ -41,17 +41,16 @@ const Header = () => {
           {/* ----------------------Right Image Section----------------------------------- */}
           <div className='flex-1 flex items-center justify-center p-4'>
             <div className='relative animate-fade-in-up animation-delay-300'>
-              {/* Your header image - Made bigger */}
+              
               <div className='w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] relative flex items-center justify-center animate-float'>
                 <img className='w-full h-full object-contain drop-shadow-2xl filter hover:brightness-110 transition-all duration-300' src={header_img} alt='MediMate mascot' />
               </div>
               
-              {/* Enhanced floating elements with better animations */}
+              
               <div className='absolute top-4 right-4 w-6 h-6 bg-pink-300 rounded-full opacity-60 animate-bounce-smooth animate-pulse-glow' style={{animationDelay: '0s'}}></div>
               <div className='absolute bottom-8 left-2 w-4 h-4 bg-yellow-300 rounded-full opacity-60 animate-bounce-smooth animate-pulse-glow' style={{animationDelay: '0.5s'}}></div>
               <div className='absolute top-1/2 -right-2 w-3 h-3 bg-purple-300 rounded-full opacity-60 animate-bounce-smooth animate-pulse-glow' style={{animationDelay: '1s'}}></div>
               
-              {/* Additional decorative elements */}
               <div className='absolute top-1/4 -left-4 w-2 h-2 bg-blue-300 rounded-full opacity-40 animate-ping' style={{animationDelay: '1.5s'}}></div>
               <div className='absolute bottom-1/4 -right-6 w-5 h-5 bg-green-300 rounded-full opacity-50 animate-spin-slow' style={{animationDelay: '2s'}}></div>
             </div>
