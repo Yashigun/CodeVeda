@@ -66,7 +66,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about-section" className="w-full bg-primary py-16 md:py-20 lg:py-24 relative overflow-hidden">
+    <section id="about" className="w-full bg-primary py-16 md:py-20 lg:py-24 relative overflow-hidden">
+
       {/* Static floating background elements */}
       <div className="absolute top-20 left-10 w-8 h-8 bg-teal-200 rounded-full opacity-30 animate-bounce-gentle"></div>
       <div className="absolute top-40 right-20 w-6 h-6 bg-teal-100 rounded-full opacity-40 animate-float-delayed"></div>

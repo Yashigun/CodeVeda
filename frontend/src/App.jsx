@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       {/* className='mx-4 sm:mx-[10%]' */}
-      <NavBar />
+      <NavBar className = 'sticky top-0' />
       
       <Routes>
         <Route path='/' element={<Home/>} />
@@ -27,6 +27,7 @@ const App = () => {
         <Route path = '/my-appointments' element = {<Myappointments/>}/>
         <Route path = '/book-appointments/:docID' element = {<Bookappointment/>}/>
       </Routes>
+      
     </div>
   );
 };
