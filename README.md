@@ -1,38 +1,54 @@
 # MediMate
+### MediMate is an AI-powered medical assistant that helps users check symptoms, get guidance, and navigate their health journey through a friendly chatbot interface.
 ---
-
-### MediMate Bot 
-A simple medical chatbot using React (frontend), Node.js (backend), and the Gemini API.
+## Features
+- AI-powered chatbot for symptom checking
+- Add more...
 ---
+## Project Structure
 
-### Run the Bot Locally
+---
+### Installation
 
-### 1. Install dependencies
-Backend:
+Backend (ChatBot):
 ```
-cd server
+cd MediMateBot/server
 npm install
 ```
-Frontend
+Frontend (ChatBot):
 ```
-cd server
+cd MediMateBot/client
 npm install
 ```
-### 2. Add your API key
+Frontend (Main):
+```
+cd frontend
+npm install
+```
+
+### Add your API key
 Create a .env file inside /server with:
 ```
 GEMINI_API_KEY=your_google_api_key_here
 ```
-### 3. Start the backend
+### Running the Project
+Chatbot:
+Start Backend:
 ```
-cd server
+cd MediMateBot/server
 node server.js
 ```
 Backend will run at: http://localhost:8080
-### 4. Start the frontend
+Start the frontend:
 ```
-cd ../client
+cd MediMateBot/client
+npm run dev
+```
+Start Main Frontend:
+```
+cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
