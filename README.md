@@ -2,8 +2,19 @@
 ### MediMate is an AI-powered medical assistant that helps users check symptoms, get guidance, and navigate their health journey through a friendly chatbot interface.
 ---
 ## Features
-- AI-powered chatbot for symptom checking
-- Add more...
+- **AI-powered Chatbot for Symptom Checking**  
+  - Built using **Google’s Gemini API** for natural, context-aware medical conversations  
+  - Analyzes user-reported symptoms and provides responses in a structured format:  
+    **Severity**, **Immediate Need for Attention**, **See a Doctor If**, **Next Steps**, **Possible Conditions**  
+  - Helps users decide whether they can manage symptoms at home or need to consult a healthcare professional  
+
+- **Nearby Hospitals & Pharmacies**  
+  - Interactive map powered by **OpenStreetMap & Overpass API**  
+  - Automatically detects your **approximate location** (via IP geolocation)  
+  - Displays hospitals, clinics, and pharmacies within a **3 km radius**  
+  - Includes a **legend and radius circle** for better clarity  
+  - Falls back to prominent Delhi hospitals (AIIMS, Safdarjung, Apollo, Fortis) if location detection fails
+
 ---
 ## Project Structure
 
@@ -50,5 +61,6 @@ cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
 
