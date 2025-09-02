@@ -24,19 +24,26 @@ const NavBar = () => {
         </li>
           
         </NavLink>
-        <NavLink to='/Doctors'>
-          <li className='py-3 text-primary'>DOCTORS</li>
-          
-        </NavLink>
+
+
         <li className='py-3 text-primary cursor-pointer' 
             onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>
           ABOUT
           
         </li>
-        <NavLink to='/Contact'>
-          <li className='py-3 text-primary'>CONTACT</li>
+
+        <li className='py-3 text-primary cursor-pointer' 
+            onClick={() => document.getElementById('map')?.scrollIntoView({behavior: 'smooth'})}>
+          MAP
           
-        </NavLink>
+        </li>
+
+
+        <li className='py-3 text-primary cursor-pointer' 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
+          CONTACT
+          
+        </li>
       </ul>
       
       <div className='flex items-center gap-4'>

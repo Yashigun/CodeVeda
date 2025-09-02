@@ -98,7 +98,7 @@ const MapComponent = () => {
   }, []);
 
   return (
-    <div
+    <div id="map"
       className="map-section"
       style={{
         padding: "1.5rem",
