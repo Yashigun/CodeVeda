@@ -388,9 +388,6 @@ const MapComponent = () => {
       </div>
 
       <style jsx>{`
-        .bg-primary {
-          background-color: #0f766e;
-        }
         
         .text-primary {
           color: #0f766e;
