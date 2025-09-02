@@ -4,7 +4,7 @@ import About from './About'
 
 const Home = () => {
   return (
-    <div>
+    <div id = 'home'>
       <Header/>
       <About/>
     </div>
