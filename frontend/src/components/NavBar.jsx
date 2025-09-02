@@ -12,12 +12,12 @@ const NavBar = () => {
     <div className='bg-white fixed top-0 left-0 w-full z-50 shadow'>
     <div className='mr-20 ml-10 mt-1 flex items-center justify-between text-sm py-4 mb-2 '>
       <img className='w-50 cursor-pointer' src={Medimate4_png} alt="img" />
-      <ul className='hidden md:flex items-start gap-5 font-medium'>
+      <ul className='hidden md:flex items-start gap-10 font-medium'>
 
 
         <NavLink to='/'>
           {/* <li className='py-3 text-primary'>HOME</li> */}
-          <li className='py-3 text-primary cursor-pointer' 
+          <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('home')?.scrollIntoView({behavior: 'smooth'})}>
           HOME
           
@@ -26,20 +26,20 @@ const NavBar = () => {
         </NavLink>
 
 
-        <li className='py-3 text-primary cursor-pointer' 
+        <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>
           ABOUT
           
         </li>
 
-        <li className='py-3 text-primary cursor-pointer' 
+        <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('map')?.scrollIntoView({behavior: 'smooth'})}>
           MAP
           
         </li>
 
 
-        <li className='py-3 text-primary cursor-pointer' 
+        <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
           CONTACT
           
