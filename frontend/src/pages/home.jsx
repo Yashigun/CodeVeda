@@ -5,7 +5,7 @@ import MapComponent from './MapComponent';
 
 const Home = () => {
   return (
-    <div>
+    <div id = 'home'>
       <Header/>
       <About/>
       <MapComponent />

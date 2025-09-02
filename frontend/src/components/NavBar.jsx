@@ -13,23 +13,37 @@ const NavBar = () => {
     <div className='mr-20 ml-10 mt-1 flex items-center justify-between text-sm py-4 mb-2 '>
       <img className='w-50 cursor-pointer' src={Medimate4_png} alt="img" />
       <ul className='hidden md:flex items-start gap-5 font-medium'>
+
+
         <NavLink to='/'>
-          <li className='py-3 text-primary'>HOME</li>
+          {/* <li className='py-3 text-primary'>HOME</li> */}
+          <li className='py-3 text-primary cursor-pointer' 
+            onClick={() => document.getElementById('home')?.scrollIntoView({behavior: 'smooth'})}>
+          HOME
+          
+        </li>
           
         </NavLink>
-        <NavLink to='/Doctors'>
-          <li className='py-3 text-primary'>DOCTORS</li>
-          
-        </NavLink>
+
+
         <li className='py-3 text-primary cursor-pointer' 
             onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>
           ABOUT
           
         </li>
-        <NavLink to='/Contact'>
-          <li className='py-3 text-primary'>CONTACT</li>
+
+        <li className='py-3 text-primary cursor-pointer' 
+            onClick={() => document.getElementById('map')?.scrollIntoView({behavior: 'smooth'})}>
+          MAP
           
-        </NavLink>
+        </li>
+
+
+        <li className='py-3 text-primary cursor-pointer' 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
+          CONTACT
+          
+        </li>
       </ul>
       
       <div className='flex items-center gap-4'>
@@ -42,7 +56,7 @@ const NavBar = () => {
                     <div className='-m-3 min-w-48 bg-primary rounded flex flex-col gap-1.5'>
                         <p onClick={()=>navigate('/Myprofile')} className='pl-3 pt-2 pb-2 hover:cursor-pointer hover:text-primary hover:bg-secondary'>My Profile</p>
                         <p onClick={()=>navigate('/Myappointments')} className='pl-3 pt-2 pb-2 hover:cursor-pointer hover:text-primary hover:bg-secondary'>My Appointments</p>
-                        <p onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})} className='pl-3 pt-2 pb-2 hover:cursor-pointer hover:text-primary hover:bg-secondary'>About</p>
+
                         <p onClick={()=>setToken(false)} className='pl-3 pt-2 pb-2 hover:cursor-pointer hover:text-primary hover:bg-secondary'>Logout</p>
                     </div>
                 </div>
