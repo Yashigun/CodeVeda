@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='w-full bg-gradient-to-r from-secondary to-white border-t border-gray-200 py-6 mt-auto'>
+    <footer className='w-full bg-gradient-to-r from-secondary to-white border-t border-gray-200 py-3 mt-auto'>
       <div className='max-w-6xl mx-auto px-4'>
-        <div className='flex flex-col items-center justify-center space-y-3'>
+        <div className='flex flex-col items-center justify-center space-y-0'>
           
           {/* Copyright text */}
           <div className='text-gray-600 text-sm font-medium tracking-wide'>

@@ -2,8 +2,8 @@ import React from 'react'
 
 const Bookappointment = () => {
   return (
-    <div>
-      book
+    <div className='py-12 md:py-16 lg:py-22'>
+      book appointments!
     </div>
   )
 }

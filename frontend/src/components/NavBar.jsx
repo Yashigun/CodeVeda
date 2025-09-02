@@ -11,7 +11,8 @@ const NavBar = () => {
   return (
     <div className='bg-white fixed top-0 left-0 w-full z-50 shadow'>
     <div className='mr-20 ml-10 mt-1 flex items-center justify-between text-sm py-4 mb-2 '>
-      <img className='w-50 cursor-pointer' src={Medimate4_png} alt="img" />
+      <img className='w-50 cursor-pointer' onClick={() => document.getElementById('home')?.scrollIntoView({behavior: 'smooth'})} src={Medimate4_png} alt="img" />
+      
       <ul className='hidden md:flex items-start gap-5 font-medium'>
 
 
@@ -44,6 +45,11 @@ const NavBar = () => {
           CONTACT
           
         </li>
+
+        <NavLink to='/book-appointments'>
+          <li className='py-3 text-primary cursor-pointer' >APPOINTMENTS</li>
+        </NavLink>
+
       </ul>
       
       <div className='flex items-center gap-4'>
