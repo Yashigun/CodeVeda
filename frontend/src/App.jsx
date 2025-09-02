@@ -9,6 +9,8 @@ import About from './pages/About';
 import Bookappointment from './pages/Bookappointment';
 import Myappointments from './pages/Myappointments';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import LoginToContinue from './pages/logintocontinue';
 
 const App = () => {
   return (
@@ -26,7 +28,9 @@ const App = () => {
         <Route path = '/my-profile' element = {<Myprofile/>}/>
         <Route path = '/my-appointments' element = {<Myappointments/>}/>
         <Route path = '/book-appointments' element = {<Bookappointment/>}/>
+        <Route path='/redirecting' element={<LoginToContinue/>}></Route>
       </Routes>
+      <Footer className='sticky bottom-0'/>
       
     </div>
   );

@@ -11,10 +11,11 @@ import pfp_png from './profile_pic.png'
 import dropdown from './dropdown.png'
 import header_img from './miffybg-semicircle2.png'
 import rtarrow from './rt_arrow.png'
+import miffy2 from './miffy2.png'
 
 export const assets = {
-    Medimate1, Medimate2, Medimate3, Medimate4, dropdown, Medimate_bandaid, Medimate_hrt,Medimate1_png, rtarrow, Medimate4_png, pfp_png,header_img
+    Medimate1, Medimate2, Medimate3, Medimate4, dropdown, Medimate_bandaid, Medimate_hrt,Medimate1_png, rtarrow, Medimate4_png, pfp_png,miffy2,header_img
 }
 
-export {Medimate1,Medimate2,Medimate3,Medimate4, dropdown, Medimate_bandaid,Medimate_hrt,Medimate1_png,Medimate4_png, pfp_png,rtarrow,header_img}
+export {Medimate1,miffy2,Medimate2,Medimate3,Medimate4, dropdown, Medimate_bandaid,Medimate_hrt,Medimate1_png,Medimate4_png, pfp_png,rtarrow,header_img}
 
