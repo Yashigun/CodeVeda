@@ -139,6 +139,7 @@ const MapComponent = () => {
           borderRadius: "16px",
           border: "2px solid #ddd",
           boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+          zIndex:0,
         }}
       >
         <RecenterMap position={position} />
