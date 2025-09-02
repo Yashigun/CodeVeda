@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import About from './About'
 import MapComponent from './MapComponent';
 import Contact from './Contact';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <About/>
       <MapComponent />
       <Contact/>
+      <Footer/>
     </div>
   );
 };
