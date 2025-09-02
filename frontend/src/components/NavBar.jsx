@@ -11,8 +11,9 @@ const NavBar = () => {
   return (
     <div className='bg-white fixed top-0 left-0 w-full z-50 shadow'>
     <div className='mr-20 ml-10 mt-1 flex items-center justify-between text-sm py-4 mb-2 '>
+      <NavLink to='/'>
       <img className='w-50 cursor-pointer' onClick={() => document.getElementById('home')?.scrollIntoView({behavior: 'smooth'})} src={Medimate4_png} alt="img" />
-      
+      </NavLink>
       <ul className='hidden md:flex items-start gap-5 font-medium'>
 
 
@@ -24,31 +25,35 @@ const NavBar = () => {
           HOME
           
         </li>
-          
-        </NavLink>
+          </NavLink>
+        
 
-
+        <NavLink to='/'>
         <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>
           ABOUT
           
         </li>
+        </NavLink>
 
+        <NavLink to='/'>
         <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('map')?.scrollIntoView({behavior: 'smooth'})}>
           MAP
           
         </li>
+        </NavLink>
 
-
+        <NavLink to='/'>
         <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' 
             onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
           CONTACT
-          
         </li>
+        </NavLink>
+        
 
         <NavLink to='/book-appointments'>
-          <li className='py-3 text-primary cursor-pointer' >APPOINTMENTS</li>
+          <li className='py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full' >APPOINTMENTS</li>
         </NavLink>
 
       </ul>

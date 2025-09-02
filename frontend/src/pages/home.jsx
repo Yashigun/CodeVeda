@@ -12,7 +12,6 @@ const Home = () => {
       <About/>
       <MapComponent />
       <Contact/>
-      <Footer/>
     </div>
   );
 };
