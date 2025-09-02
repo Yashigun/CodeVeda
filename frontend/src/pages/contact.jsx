@@ -25,7 +25,7 @@ const Contact = () => {
   }
 
   return (
-    <div className='w-full bg-primary py-12 md:py-16 lg:py-20'>
+    <div id="contact" className='w-full bg-primary py-12 md:py-16 lg:py-20'>
       <div className=' max-w-7xl mx-auto px-6 md:px-10 lg:px-20'>
         <div className='flex flex-col md:flex-row items-center gap-8 md:gap-12'>
 
