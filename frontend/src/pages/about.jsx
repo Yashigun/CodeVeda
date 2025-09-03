@@ -46,22 +46,22 @@ const About = () => {
     {
       icon: "💬",
       title: "Smart Chat",
-      description: "Chat with our AI health assistant 24/7 for instant support and guidance"
+      description: "Chat with our AI health assistant 24/7 for instant support and guidance."
     },
     {
       icon: "🩺",
       title: "Health Insights",
-      description: "Get personalized health insights based on your symptoms and concerns"
+      description: "Get personalized health insights based on your symptoms and concerns."
     },
     {
       icon: "📅",
       title: "Easy Booking",
-      description: "Book appointments with healthcare providers in just a few clicks"
+      description: "Book appointments with healthcare providers in just a few clicks."
     },
     {
-      icon: "💊",
-      title: "Medicine Tracker",
-      description: "Never miss a dose with our smart medication reminder system"
+      icon: "🚨",
+      title: "SOS",
+      description: "SOS Button to alert the authorities instantly in case of an emergency."
     }
   ];
 
