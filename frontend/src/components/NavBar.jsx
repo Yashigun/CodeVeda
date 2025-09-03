@@ -1,27 +1,56 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Medimate4_png, pfp_png, dropdown } from "../assets/assets";
+import { useAuth } from "../context/AuthContext"; // Import the auth context
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const [token, setToken] = useState(true);
+  const { token, logout } = useAuth(); // Use the auth context
   const [notification, setNotification] = useState(null);
 
+  const handleLogout = () => {
+    logout(); // This will update the global auth state
+    navigate("/"); // Optionally redirect to home page
+  };
+
   const handleSOS = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        // Accurate GPS location
-        const { latitude, longitude } = pos.coords;
-        const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
-        setNotification({
-          message: `🚨 SOS Triggered! Your location (${latitude.toFixed(2)}, ${longitude.toFixed(2)}) has been sent. Emergency services will be in contact shortly.`,
-          link: mapLink,
-        });
-        setTimeout(() => setNotification(null), 8000);
-      },
-      async () => {
-        // Fallback to IP-based approximate location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          // Accurate GPS location
+          const { latitude, longitude } = pos.coords;
+          const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
+          setNotification({
+            message: `🚨 SOS Triggered! Your location (${latitude.toFixed(2)}, ${longitude.toFixed(2)}) has been sent. Emergency services will be in contact shortly.`,
+            link: mapLink,
+          });
+          setTimeout(() => setNotification(null), 8000);
+        },
+        async () => {
+          // Fallback to IP-based approximate location
+          try {
+            const res = await fetch("https://ipapi.co/json/");
+            const data = await res.json();
+            const { latitude, longitude } = data;
+            const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
+            setNotification({
+              message: `🚨 SOS Triggered! Your approximate location (${latitude.toFixed(2)}, ${longitude.toFixed(2)}) has been sent. Emergency services will be in contact shortly.`,
+              link: mapLink,
+            });
+            setTimeout(() => setNotification(null), 8000);
+          } catch {
+            // Last fallback: no location
+            setNotification({
+              message: `🚨 SOS Triggered! Location unavailable. Emergency services will be in contact shortly.`,
+              link: null,
+            });
+            setTimeout(() => setNotification(null), 8000);
+          }
+        }
+      );
+    } else {
+      // Geolocation not supported, use IP fallback
+      (async () => {
         try {
           const res = await fetch("https://ipapi.co/json/");
           const data = await res.json();
@@ -33,39 +62,15 @@ const NavBar = () => {
           });
           setTimeout(() => setNotification(null), 8000);
         } catch {
-          // Last fallback: no location
           setNotification({
             message: `🚨 SOS Triggered! Location unavailable. Emergency services will be in contact shortly.`,
             link: null,
           });
           setTimeout(() => setNotification(null), 8000);
         }
-      }
-    );
-  } else {
-    // Geolocation not supported, use IP fallback
-    (async () => {
-      try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-        const { latitude, longitude } = data;
-        const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
-        setNotification({
-          message: `🚨 SOS Triggered! Your approximate location (${latitude.toFixed(2)}, ${longitude.toFixed(2)}) has been sent. Emergency services will be in contact shortly.`,
-          link: mapLink,
-        });
-        setTimeout(() => setNotification(null), 8000);
-      } catch {
-        setNotification({
-          message: `🚨 SOS Triggered! Location unavailable. Emergency services will be in contact shortly.`,
-          link: null,
-        });
-        setTimeout(() => setNotification(null), 8000);
-      }
-    })();
-  }
-};
-
+      })();
+    }
+  };
 
   return (
     <div className="bg-white fixed top-0 left-0 w-full z-50 shadow">
@@ -174,7 +179,7 @@ const NavBar = () => {
                     My Appointments
                   </p>
                   <p
-                    onClick={() => setToken(false)}
+                    onClick={handleLogout}
                     className="pl-3 pt-2 pb-2 hover:bg-secondary"
                   >
                     Logout

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const dashboard = () => {
+const Dashboard = () => {
   return (
-    <div>
-      
+    <div className='py-50 lg:20'>
+      Dashboard
     </div>
   )
 }
 
-export default dashboard
+export default Dashboard

@@ -1,6 +1,9 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { useAuth } from "../context/AuthContext"; // Import the auth context
+
 const Bookappointment = () => {
+  const { token } = useAuth(); // Get token from auth context
   
   const [docSlots, setDocSlots] = useState([])
   const [slotIndex, setSlotIndex] = useState(0)
@@ -59,7 +62,7 @@ const Bookappointment = () => {
   },[docSlots])
   
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col py-20'>
+    <div id = "bookappt" className='min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col py-20'>
     <header className="bg-gradient-to-r from-primary to-teal-700 shadow-lg border-b border-primary flex-shrink-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-6 sm:py-8">
@@ -174,7 +177,11 @@ const Bookappointment = () => {
                       </p>
                     </div>
                     
-                    <button onClick={()=>navigate('/redirecting')} className='bg-primary text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-green-700 transition-all duration-200 hover:scale-105 shadow-lg text-sm'>
+                    {/* Fixed conditional logic */}
+                    <button 
+                      onClick={() => token ? navigate('/dashboard') : navigate('/redirecting')} 
+                      className='bg-primary text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-green-700 transition-all duration-200 hover:scale-105 shadow-lg text-sm'
+                    >
                       Confirm Booking
                     </button>
                   </div>
