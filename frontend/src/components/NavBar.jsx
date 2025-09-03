@@ -126,6 +126,12 @@ const NavBar = () => {
           >
             CONTACT
           </li>
+          <li
+            className="py-3 text-primary cursor-pointer relative after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            onClick={() => navigate("/book-appointments")}
+          >
+            BOOK APPOINTMENT
+          </li>
         </ul>
 
         {/* Right side: Profile + SOS */}
