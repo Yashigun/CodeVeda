@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext'; // Import AuthProvider
 import Home from './pages/Home';
 import Doctors from './pages/Doctors';
 import Login from './pages/Login';
@@ -11,28 +12,32 @@ import Myappointments from './pages/Myappointments';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import LoginToContinue from './pages/logintocontinue';
+import Dashboard from './pages/dashboard';
 
 const App = () => {
   return (
-    <div>
-      {/* className='mx-4 sm:mx-[10%]' */}
-      <NavBar className = 'sticky top-0' />
-      
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path = '/doctors' element = {<Doctors/>}/>
-        <Route path = '/doctors/:speciality' element = {<Doctors/>} />
-        <Route path = '/login' element = {<Login/>}/>
-        <Route path = '/about' element = {<About/>}/>
-        <Route path = '/contact' element = {<Contact/>}/>
-        <Route path = '/my-profile' element = {<Myprofile/>}/>
-        <Route path = '/my-appointments' element = {<Myappointments/>}/>
-        <Route path = '/book-appointments' element = {<Bookappointment/>}/>
-        <Route path='/redirecting' element={<LoginToContinue/>}></Route>
-      </Routes>
-      <Footer className='sticky bottom-0'/>
-      
-    </div>
+    <AuthProvider>
+      <div>
+        {/* className='mx-4 sm:mx-[10%]' */}
+        <NavBar className = 'sticky top-0' />
+        
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path = '/doctors' element = {<Doctors/>}/>
+          <Route path = '/doctors/:speciality' element = {<Doctors/>} />
+          <Route path = '/login' element = {<Login/>}/>
+          <Route path = '/about' element = {<About/>}/>
+          <Route path = '/contact' element = {<Contact/>}/>
+          <Route path = '/my-profile' element = {<Myprofile/>}/>
+          <Route path = '/my-appointments' element = {<Myappointments/>}/>
+          <Route path = '/book-appointments' element = {<Bookappointment/>}/>
+          <Route path='/redirecting' element={<LoginToContinue/>}></Route>
+          <Route path = '/dashboard' element = {<Dashboard/>}/>
+        </Routes>
+        <Footer className='sticky bottom-0'/>
+        
+      </div>
+    </AuthProvider>
   );
 };
 
