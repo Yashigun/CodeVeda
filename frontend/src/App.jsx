@@ -24,12 +24,10 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path = '/doctors' element = {<Doctors/>}/>
-          <Route path = '/doctors/:speciality' element = {<Doctors/>} />
           <Route path = '/login' element = {<Login/>}/>
           <Route path = '/about' element = {<About/>}/>
           <Route path = '/contact' element = {<Contact/>}/>
           <Route path = '/my-profile' element = {<Myprofile/>}/>
-          <Route path = '/my-appointments' element = {<Myappointments/>}/>
           <Route path = '/book-appointments' element = {<Bookappointment/>}/>
           <Route path='/redirecting' element={<LoginToContinue/>}></Route>
           <Route path = '/dashboard' element = {<Dashboard/>}/>
