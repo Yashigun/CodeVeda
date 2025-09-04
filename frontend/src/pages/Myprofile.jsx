@@ -24,6 +24,7 @@ const Myprofile = () => {
     <div className='py-10 min-h-screen bg-primary'>
       <div className="pt-10 pb-20">
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
+
           {/* Header */}
           <div className='py-6 sm:py-8'>
             <div className='flex items-center justify-between'>
@@ -58,8 +59,12 @@ const Myprofile = () => {
                   </button>
                 )}
               </div>
-              <h2 className='text-3xl font-bold text-gray-800 mt-4 mb-2'>{userData.name}</h2>
-              <p className='text-gray-600 text-lg'>{userData.email}</p>
+              {isEditing
+              ? <></>
+              : <><h2 className='text-3xl font-bold text-gray-800 mt-4 mb-2'>{userData.name}</h2>
+                <p className='text-gray-600 text-lg'>{userData.email}</p></>}
+              
+              
             </div>
 
             {/* Information Section */}
@@ -76,21 +81,31 @@ const Myprofile = () => {
                   <div>
                     <label className='block text-sm font-semibold text-gray-600 mb-2'>Full Name</label>
                     <div className='p-4 bg-gray-50 rounded-lg border-l-4 border-primary'>
-                      <p className='text-gray-800 font-medium'>{userData.name}</p>
+                      {isEditing ? <input type="text" placeholder='Enter Full Name' />
+                      : <p className='text-gray-800 font-medium'>{userData.name}</p>
+                      }
+                      
                     </div>
                   </div>
 
                   <div>
                     <label className='block text-sm font-semibold text-gray-600 mb-2'>Email Address</label>
                     <div className='p-4 bg-gray-50 rounded-lg border-l-4 border-primary'>
-                      <p className='text-gray-800 font-medium'>{userData.email}</p>
+                      {isEditing
+                      ? <input type="email" placeholder="Enter your email" />
+                      : <p className='text-gray-800 font-medium'>{userData.email}</p>
+                      }
+                      
                     </div>
                   </div>
 
                   <div>
                     <label className='block text-sm font-semibold text-gray-600 mb-2'>Phone Number</label>
                     <div className='p-4 bg-gray-50 rounded-lg border-l-4 border-primary'>
-                      <p className='text-gray-800 font-medium'>{userData.phone}</p>
+                      {isEditing
+                      ? <input type="tel" placeholder='Enter your number' />
+                      : <p className='text-gray-800 font-medium'>{userData.phone}</p>}
+                      
                     </div>
                   </div>
                 </div>
@@ -100,21 +115,41 @@ const Myprofile = () => {
                   <div>
                     <label className='block text-sm font-semibold text-gray-600 mb-2'>Date of Birth</label>
                     <div className='p-4 bg-gray-50 rounded-lg border-l-4 border-teal-700'>
-                      <p className='text-gray-800 font-medium'>{userData.dob}</p>
+                      {isEditing
+                      ? <input type="date" id="" />
+                      : <p className='text-gray-800 font-medium'>{userData.dob}</p> }
                     </div>
                   </div>
 
                   <div>
                     <label className='block text-sm font-semibold text-gray-600 mb-2'>Gender</label>
                     <div className='p-4 bg-gray-50 rounded-lg border-l-4 border-teal-700'>
-                      <p className='text-gray-800 font-medium'>{userData.gender}</p>
+                      {isEditing 
+                      ? <select className=' bg-gray-50' name="gender options">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="other">Other</option>
+                      </select>
+                      : <p className='text-gray-800 font-medium'>{userData.gender}</p>}
                     </div>
                   </div>
 
                   <div>
                     <label className='block text-sm font-semibold text-gray-600 mb-2'>Blood Group</label>
                     <div className='p-4 bg-gray-50 rounded-lg border-l-4 border-teal-700'>
-                      <p className='text-gray-800 font-medium'>{userData.bloodgroup}</p>
+                      {isEditing
+                      ? <select className='bg-gray-50' name="bloodgrp">
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                      </select>
+                      :<p className='text-gray-800 font-medium'>{userData.bloodgroup}</p>}
+                      
                     </div>
                   </div>
                 </div>
@@ -125,8 +160,15 @@ const Myprofile = () => {
                 <label className='block text-sm font-semibold text-gray-600 mb-2'>Address</label>
                 <div className='p-6 bg-gray-50 rounded-lg border-l-4 border-primary'>
                   <div className='space-y-1'>
-                    <p className='text-gray-800 font-medium'>{userData.address.line1}</p>
-                    <p className='text-gray-800 font-medium'>{userData.address.line2}</p>
+                    {isEditing
+                    ? <input type="text" name="line1" placeholder='Enter line 1 of address' />
+                    : <p className='text-gray-800 font-medium'>{userData.address.line1}</p>
+                    }
+
+                    {isEditing
+                    ? <><br/> <input className='' type="text" name="line1" placeholder='Enter line 2 of address' /></>
+                    :<p className='text-gray-800 font-medium'>{userData.address.line2}</p>}
+
                   </div>
                 </div>
               </div>
