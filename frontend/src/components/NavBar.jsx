@@ -197,7 +197,7 @@ const NavBar = () => {
                 >
                   <button
                     onClick={() => {
-                      navigate("/Myprofile");
+                      navigate("/my-profile");
                       setMenuOpen(false);
                     }}
                     className="w-full text-left px-4 py-2 hover:bg-gray-300 text-gray-700"
