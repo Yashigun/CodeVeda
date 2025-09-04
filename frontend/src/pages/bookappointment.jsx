@@ -179,7 +179,7 @@ const Bookappointment = () => {
                     
                     {/* Fixed conditional logic */}
                     <button 
-                      onClick={() => token ? navigate('/dashboard') : navigate('/redirecting')} 
+                      onClick={() => token ? navigate('/doctors') : navigate('/redirecting')} 
                       className='bg-primary text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-green-700 transition-all duration-200 hover:scale-105 shadow-lg text-sm'
                     >
                       Confirm Booking
