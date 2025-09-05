@@ -65,7 +65,7 @@ MONGO_URI=your_mongoDB_URI
 JWT_SECRET= your_jwt_secret_key
 ```
 ### Running the Project
-Chatbot:
+Chatbot: <br>
 Start Backend:
 ```
 cd MediMateBot/server
@@ -77,7 +77,7 @@ Start the frontend:
 cd MediMateBot/client
 npm run dev
 ```
-Authentication:
+Authentication:<br>
 Start Backend:
 ```
 cd auth/server
@@ -95,6 +95,7 @@ cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
 
 
