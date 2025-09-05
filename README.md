@@ -1,5 +1,6 @@
-# MediMate
 <div align="center">
+  
+# MediMate
   <img width="350" alt="image" src="https://github.com/user-attachments/assets/98653ea2-cff2-4015-9158-dfcaaf46f031" />
 </div>
 
@@ -67,6 +68,7 @@ cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
 
 
