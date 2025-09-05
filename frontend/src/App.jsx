@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext'; // Import AuthProvider
 import Home from './pages/Home';
 import Doctors from './pages/Doctors';
-import Login from './pages/Login';
 import Contact from './pages/Contact';
 import Myprofile from './pages/Myprofile';
 import About from './pages/About';
@@ -11,7 +10,7 @@ import Bookappointment from './pages/Bookappointment';
 import Myappointments from './pages/Myappointments';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import LoginToContinue from './pages/logintocontinue';
+import LoginToContinue from './pages/Logintocontinue';
 import Dashboard from './pages/dashboard';
 
 const App = () => {
@@ -24,12 +23,11 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path = '/doctors' element = {<Doctors/>}/>
-          <Route path = '/login' element = {<Login/>}/>
           <Route path = '/about' element = {<About/>}/>
           <Route path = '/contact' element = {<Contact/>}/>
           <Route path = '/my-profile' element = {<Myprofile/>}/>
           <Route path = '/book-appointments' element = {<Bookappointment/>}/>
-          <Route path='/redirecting' element={<LoginToContinue/>}></Route>
+          <Route path='/redirecting' element={<LoginToContinue/>}/>
           <Route path = '/dashboard' element = {<Dashboard/>}/>
         </Routes>
         <Footer className='sticky bottom-0'/>

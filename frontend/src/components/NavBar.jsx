@@ -28,9 +28,13 @@ const NavBar = () => {
   }, [menuOpen]);
 
   const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("loggedInUser");
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
     logout();
     setMenuOpen(false);
-    navigate("/");
   };
 
   const handleSOS = () => {
@@ -228,7 +232,7 @@ const NavBar = () => {
             </div>
           ) : (
             <button
-              onClick={() => navigate("/Login")}
+              onClick={() => window.location.replace("http://localhost:5175/signup")}
               className="bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block"
             >
               Create account
