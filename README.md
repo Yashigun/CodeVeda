@@ -18,7 +18,7 @@
   - Automatically detects your **approximate location** (via IP geolocation)  
   - Displays hospitals, clinics, and pharmacies within a **5 km radius**  
   - Includes a **legend and radius circle** for better clarity  
-  - Falls back to prominent Delhi hospitals (AIIMS, Safdarjung, Apollo, Fortis) if location detection fails
+  - Falls back to prominent Delhi hospitals (AIIMS, Safdarjung, Apollo, Fortis, Apollo Pharmacy and MedPlus Pharmacy) if location detection fails
 - **Emergency SOS Button**
   - Quick one-click emergency trigger from the navbar
   - Detects location via GPS or falls back to IP-based lookup
@@ -68,6 +68,7 @@ cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
 
 
