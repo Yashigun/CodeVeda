@@ -1,13 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import { miffy2 } from '../assets/assets';
 
 const LoginToContinue = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   
   const handleLoginRedirect = () => {
     // Redirect to login page
-    navigate('/Login');
+    window.location.replace("http://localhost:5175/login");
   };
 
   return (
