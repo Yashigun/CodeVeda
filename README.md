@@ -15,7 +15,7 @@
 - **Nearby Hospitals & Pharmacies**  
   - Interactive map powered by **OpenStreetMap & Overpass API**  
   - Automatically detects your **approximate location** (via IP geolocation)  
-  - Displays hospitals, clinics, and pharmacies within a **3 km radius**  
+  - Displays hospitals, clinics, and pharmacies within a **5 km radius**  
   - Includes a **legend and radius circle** for better clarity  
   - Falls back to prominent Delhi hospitals (AIIMS, Safdarjung, Apollo, Fortis) if location detection fails
 - **Emergency SOS Button**
@@ -23,9 +23,6 @@
   - Detects location via GPS or falls back to IP-based lookup
   - Shows a popup with confirmation and a Google Maps link
   - Auto-hides after a few seconds for smooth UX
-
----
-## Project Structure
 
 ---
 ### Installation
@@ -70,6 +67,7 @@ cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
 
 
