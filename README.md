@@ -45,12 +45,7 @@ npm install
 ```
 Backend (Authentication):
 ```
-cd auth/server
-npm install
-```
-Frontend (Authentication):
-```
-cd auth/client
+cd backend/authServer
 npm install
 ```
 ### Add your API key
@@ -58,7 +53,7 @@ Create a .env file inside /server of MediMateBot with:
 ```
 GEMINI_API_KEY=your_google_api_key_here
 ```
-Create a .env file inside /server of auth with:
+Create a .env file inside /authServer of backend with:
 ```
 PORT= 5000
 MONGO_URI=your_mongoDB_URI
@@ -80,21 +75,18 @@ npm run dev
 Authentication:<br>
 Start Backend:
 ```
-cd auth/server
+cd backend/authServer
 npm run dev
 ```
 Backend of Authentication will run at: http://localhost:5000
-Start the frontend:
-```
-cd auth/client
-npm run dev
-```
+
 Start Main Frontend:
 ```
 cd frontend
 npm run dev
 ```
 Open the printed local URL in your browser.
+
 
 
 
