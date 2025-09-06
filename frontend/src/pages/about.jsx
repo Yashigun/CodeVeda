@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 
 const About = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -197,7 +198,7 @@ const About = () => {
               
               <button className="group bg-primary text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-teal-700 relative overflow-hidden">
                 <span className="relative z-10 flex items-center gap-3">
-                  Get Started Today
+                  <Link to="/signup">Get Started Today </Link>
                   <span className="text-2xl group-hover:animate-bounce"></span>
                 </span>
                 <div className="absolute inset-0 bg-teal-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
