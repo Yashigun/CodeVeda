@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const panelVariants = {
+  initial: { x: "100%", opacity: 0 },
+  animate: { x: "0%", opacity: 1 },
+  exit: { x: "-100%", opacity: 0 },
+};
 
 const Login = () => {
   const [signedUpUser, setSignedUpUser] = useState("");
@@ -11,7 +18,6 @@ const Login = () => {
     email: "",
     password: "",
   });
-
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
@@ -32,9 +38,7 @@ const Login = () => {
     try {
       const response = await fetch("http://localhost:5000/auth/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
@@ -59,65 +63,67 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen w-screen relative">
-      {/* Blue box visible only on md+ screens */}
-      <div className="hidden md:flex absolute right-0 w-1/2 h-full bg-[var(--color-primary)] items-center justify-center flex-col px-6 text-center">
-        <h1 className="text-6xl font-bold text-[var(--color-secondary)] mb-3">
-          Welcome Back! {signedUpUser}
+      {/* Animated Right panel */}
+      <motion.div
+        className="hidden md:flex absolute right-0 w-1/2 h-full bg-[var(--color-primary)] items-center justify-center flex-col px-8 text-center"
+        variants={panelVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        <img src="/login.png" alt="Miffy" className="w-auto mb-6 drop-shadow-lg" />
+        <h1 className="text-4xl font-bold text-[var(--color-secondary)] mb-4">
+          It&apos;s Good To See You Again
+          {signedUpUser ? `, ${signedUpUser}` : " !"}
         </h1>
-        <p className="text-xl text-white opacity-90">
-          We’re glad to see you again. Please login to continue.
-        </p>
-      </div>
+      </motion.div>
 
-      {/* Login form */}
+      {/* Left panel - Login form */}
       <div className="absolute left-0 w-full md:w-1/2 flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center h-screen w-full px-6">
-          <h1 className="text-3xl font-black p-6">Login here</h1>
+        <div className="flex flex-col items-center justify-center h-screen w-full px-8">
+          <h1 className="text-3xl text-[var(--color-primary)] font-bold pb-10">
+            Welcome Back!
+          </h1>
 
-          {/* Error message */}
-          {error && <p className="text-red-500 font-medium mb-2">{error}</p>}
+          {error && <p className="text-red-500 font-medium mb-3">{error}</p>}
 
-          <form className="w-full max-w-sm space-y-4" onSubmit={handleLogin}>
-            {/* Email */}
-            <div>
-              <input
-                name="email"
-                onChange={handleChange}
-                value={loginInfo.email}
-                className="my-2 w-full p-3 border-none outline-none rounded-3xl bg-gray-100 shadow-[inset_4px_4px_6px_rgba(0,0,0,0.2),inset_-4px_-4px_6px_rgba(255,255,255,0.7)] focus:ring-2 focus:ring-transparent"
-                type="email"
-                placeholder="Enter email"
-                required
-              />
-            </div>
+          <form className="w-full max-w-sm space-y-6" onSubmit={handleLogin}>
+            <input
+              name="email"
+              onChange={handleChange}
+              value={loginInfo.email}
+              className="w-full px-4 py-3 rounded-3xl bg-gray-100 shadow-inner focus:ring-2 focus:ring-cyan-400"
+              type="email"
+              placeholder="Enter email"
+              required
+            />
 
-            {/* Password */}
-            <div>
-              <input
-                name="password"
-                onChange={handleChange}
-                value={loginInfo.password}
-                className="mb-2 w-full p-3 border-none outline-none rounded-3xl bg-gray-100 shadow-[inset_4px_4px_6px_rgba(0,0,0,0.2),inset_-4px_-4px_6px_rgba(255,255,255,0.7)] focus:ring-2 focus:ring-transparent"
-                type="password"
-                placeholder="Enter password"
-                required
-              />
-            </div>
+            <input
+              name="password"
+              onChange={handleChange}
+              value={loginInfo.password}
+              className="w-full px-4 py-3 rounded-3xl bg-gray-100 shadow-inner focus:ring-2 focus:ring-cyan-400"
+              type="password"
+              placeholder="Enter password"
+              required
+            />
 
-            {/* Submit */}
-            <div className="flex justify-center">
+            <div className="flex justify-center pt-4">
               <button
                 type="submit"
-                className="w-40 p-3 rounded-3xl bg-[var(--color-primary)] text-white font-semibold hover:bg-cyan-700 transition"
+                className="w-40 py-3 rounded-3xl bg-[var(--color-primary)] text-white font-semibold hover:bg-cyan-700 transition"
               >
                 Login
               </button>
             </div>
 
-            {/* Link */}
-            <span className="flex justify-center items-center mt-3 text-sm">
+            <span className="flex justify-center items-center pt-2 text-sm">
               Don&apos;t have an account?{" "}
-              <Link className="text-[var(--color-primary)] hover:underline" to="/signup">
+              <Link
+                className="ml-1 text-[var(--color-primary)] hover:underline"
+                to="/signup"
+              >
                 Sign Up
               </Link>
             </span>
