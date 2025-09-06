@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Doctors from './pages/Doctors';
 import Contact from './pages/Contact';
@@ -15,6 +15,25 @@ import Dashboard from './pages/dashboard';
 import Login from './authPage/Login.jsx';
 import Signup from './authPage/Signup.jsx';
 import RefreshHandler from './RefreshHandler.jsx';
+
+// ✅ BodyClassController inside same file for simplicity
+const BodyClassController = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.className = ""; // clear old classes
+
+    if (location.pathname === "/login") {
+      document.body.classList.add("login-page");
+    } else if (location.pathname === "/signup") {
+      document.body.classList.add("signup-page");
+    } else {
+      document.body.classList.add("default-page");
+    }
+  }, [location]);
+
+  return null; // nothing to render
+};
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,6 +54,9 @@ const App = () => {
 
   return (
     <div>
+      {/* ✅ BodyClassController runs on every route change */}
+      <BodyClassController />
+
       <NavBar className="sticky top-0" />
 
       {/* ✅ Keep RefreshHandler outside Routes */}
@@ -52,7 +74,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/about" element={<About />} />
