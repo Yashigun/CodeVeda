@@ -4,20 +4,21 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const RefreshHandler = ({ setIsAuthenticated }) => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate= useNavigate()
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
 
-    if (token) {
+    if (localStorage.getItem("token")) {
       setIsAuthenticated(true);
 
-      // Redirect only if on login/signup and already authenticated
-      if (location.pathname === "/login" || location.pathname === "/signup") {
-        navigate("/dashboard", { replace: true });
+      // Redirect only if on login/signup/root and already authenticated
+      if (
+        location.pathname === "/" ||
+        location.pathname === "/login" ||
+        location.pathname === "/signup"
+      ) {
+        navigate("/Dashboard", { replace: false });
       }
-    } else {
-      setIsAuthenticated(false);
     }
   }, [location, navigate, setIsAuthenticated]);
 

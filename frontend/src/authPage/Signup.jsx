@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -15,6 +15,7 @@ const Signup = () => {
     password: "",
   });
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // ✅ for redirect
 
   const handleChange = (e) => {
     setSignupInfo({ ...signupInfo, [e.target.name]: e.target.value });
@@ -45,13 +46,13 @@ const Signup = () => {
 
       if (success) {
         localStorage.setItem("signedUpUser", name);
-        window.location.replace("http://localhost:5174/Dashboard");
+        navigate("/dashboard", { replace: true }); // ✅ use navigate hook
       } else {
         const details = error?.details?.[0]?.message || message;
         setError(details || "Signup failed. Please try again.");
       }
-    } catch (error) {
-      console.error("Error during signup:", error);
+    } catch (err) {
+      console.error("Error during signup:", err);
       setError("Something went wrong. Please try again.");
     }
   };
@@ -67,7 +68,11 @@ const Signup = () => {
         exit="exit"
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <img src="/login.png" alt="Miffy" className="w-auto mb-6 drop-shadow-lg" />
+        <img
+          src="/login.png"
+          alt="Miffy"
+          className="w-auto mb-6 drop-shadow-lg"
+        />
         <h1 className="text-4xl font-bold text-[var(--color-secondary)] mb-4">
           Welcome!
         </h1>
