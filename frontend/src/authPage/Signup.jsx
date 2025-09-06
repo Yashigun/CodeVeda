@@ -42,11 +42,15 @@ const Signup = () => {
       const data = await response.json();
       console.log("Signup response:", data);
 
-      const { success, message, error } = data;
+      const { success, message, error, jwtToken } = data;
 
       if (success) {
+        // ✅ Save user info + token
+        localStorage.setItem("token", jwtToken);
         localStorage.setItem("signedUpUser", name);
-        navigate("/dashboard", { replace: true }); // ✅ use navigate hook
+
+        // ✅ Redirect to dashboard directly
+        navigate("/dashboard", { replace: true });
       } else {
         const details = error?.details?.[0]?.message || message;
         setError(details || "Signup failed. Please try again.");

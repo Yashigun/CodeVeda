@@ -33,7 +33,7 @@ const NavBar = () => {
     localStorage.removeItem("loggedInUser");
     setTimeout(() => {
       navigate("/");
-    }, 1000);
+    });
     //logout();
     setMenuOpen(false);
   };
