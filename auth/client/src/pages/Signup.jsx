@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
+const panelVariants = {
+  initial: { x: "-100%", opacity: 0 },
+  animate: { x: "0%", opacity: 1 },
+  exit: { x: "100%", opacity: 0 },
+};
 
 const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
@@ -51,27 +58,31 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center h-screen w-screen relative">
-      {/* Left panel */}
-      <div className="hidden md:flex absolute left-0 w-1/2 h-full bg-[var(--color-primary)] items-center justify-center flex-col px-8 text-center">
-        <img
-          src="/login.png"
-          alt="Miffy"
-          className="w-auto mb-6 drop-shadow-lg"
-        />
+      {/* Animated Left panel */}
+      <motion.div
+        className="hidden md:flex absolute left-0 w-1/2 h-full bg-[var(--color-primary)] items-center justify-center flex-col px-8 text-center"
+        variants={panelVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        <img src="/login.png" alt="Miffy" className="w-auto mb-6 drop-shadow-lg" />
         <h1 className="text-4xl font-bold text-[var(--color-secondary)] mb-4">
           Welcome!
         </h1>
-      </div>
+      </motion.div>
 
       {/* Right panel - form */}
       <div className="absolute right-0 w-full md:w-1/2 flex items-center justify-center">
         <div className="flex flex-col items-center justify-center h-screen w-full px-8">
-          <h1 className="text-3xl text-[var(--color-primary)] font-bold pb-10">Let's get you started.</h1>
+          <h1 className="text-3xl text-[var(--color-primary)] font-bold pb-10">
+            Let&apos;s get you started.
+          </h1>
 
           {error && <p className="text-red-500 font-medium mb-3">{error}</p>}
 
           <form className="w-full max-w-sm space-y-6" onSubmit={handleSignup}>
-            {/* Name */}
             <input
               name="name"
               onChange={handleChange}
@@ -81,7 +92,6 @@ const Signup = () => {
               value={signupInfo.name}
             />
 
-            {/* Email */}
             <input
               name="email"
               onChange={handleChange}
@@ -91,7 +101,6 @@ const Signup = () => {
               value={signupInfo.email}
             />
 
-            {/* Password */}
             <input
               name="password"
               onChange={handleChange}
@@ -101,7 +110,6 @@ const Signup = () => {
               value={signupInfo.password}
             />
 
-            {/* Submit */}
             <div className="flex justify-center pt-4">
               <button
                 type="submit"
@@ -111,7 +119,6 @@ const Signup = () => {
               </button>
             </div>
 
-            {/* Link */}
             <span className="flex justify-center items-center pt-2 text-sm">
               Already have an account?{" "}
               <Link
