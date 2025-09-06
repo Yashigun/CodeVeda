@@ -15,7 +15,7 @@ export const useAuth = () => {
 
 // Auth provider component
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(true); // Default to logged in
+  const [token, setToken] = useState(false); // Default to logged out
 
   const login = () => {
     setToken(true);
