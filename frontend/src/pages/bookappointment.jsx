@@ -1,10 +1,10 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, { useState, useEffect} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useAuth } from "../context/AuthContext"; // Import the auth context
+//import { useAuth } from "../context/AuthContext"; // Import the auth context
 
 const Bookappointment = () => {
-  const { token } = useAuth(); // Get token from auth context
-  
+  //const { token } = useAuth(); // Get token from auth context
+  const token = localStorage.getItem("token");
   const [docSlots, setDocSlots] = useState([])
   const [slotIndex, setSlotIndex] = useState(0)
   const [slotTime, setSlotTime] = useState('')

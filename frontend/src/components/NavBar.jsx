@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Medimate4_png, pfp_png, dropdown } from "../assets/assets";
-import { useAuth } from "../context/AuthContext";
+//import { useAuth } from "../context/AuthContext";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { token, logout } = useAuth();
+  //const { token, logout } = useAuth();
+  const token = localStorage.getItem("token");
   const [notification, setNotification] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -33,10 +34,10 @@ const NavBar = () => {
     setTimeout(() => {
       navigate("/");
     }, 1000);
-    logout();
+    //logout();
     setMenuOpen(false);
   };
-
+  
   const handleSOS = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -232,7 +233,7 @@ const NavBar = () => {
             </div>
           ) : (
             <button
-              onClick={() => window.location.replace("http://localhost:5175/signup")}
+              onClick={() => navigate("/signup")}
               className="bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block"
             >
               Create account

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";  // ✅ useNavigate instead of Navigate
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -10,15 +10,16 @@ const panelVariants = {
 
 const Login = () => {
   const [signedUpUser, setSignedUpUser] = useState("");
-  useEffect(() => {
-    setSignedUpUser(localStorage.getItem("signedUpUser"));
-  }, []);
-
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
   });
   const [error, setError] = useState("");
+  const navigate = useNavigate();  // ✅ hook for programmatic navigation
+
+  useEffect(() => {
+    setSignedUpUser(localStorage.getItem("signedUpUser"));
+  }, []);
 
   const handleChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
@@ -50,13 +51,13 @@ const Login = () => {
       if (success) {
         localStorage.setItem("token", jwtToken);
         localStorage.setItem("loggedInUser", name);
-        window.location.replace("http://localhost:5174/Dashboard");
+        navigate("/dashboard", { replace: true }); // ✅ fixed
       } else {
         const details = error?.details?.[0]?.message || message;
         setError(details || "Login failed. Please try again.");
       }
-    } catch (error) {
-      console.error("Error during login:", error);
+    } catch (err) {
+      console.error("Error during login:", err);
       setError("Something went wrong. Please try again.");
     }
   };
